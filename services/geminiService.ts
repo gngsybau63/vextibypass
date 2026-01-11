@@ -1,8 +1,10 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+"use server";
+
+import { GoogleGenAI } from "@google/genai";
 
 export const getSecurityAnalysis = async (context: string): Promise<string> => {
   try {
-    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GOOGLE_GENAI_API_KEY || "");
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
     const prompt = `
       You are a high-level cybersecurity expert specializing in gaming account security and risk management.
@@ -17,11 +19,12 @@ export const getSecurityAnalysis = async (context: string): Promise<string> => {
       Format the output as a raw system log analysis.
     `;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.0-flash',
+      contents: prompt,
+    });
 
-    return response.text() || "Analysis complete: No significant anomalies detected in heuristics.";
+    return response.text || "Analysis complete: No significant anomalies detected in heuristics.";
   } catch (error) {
     console.error("Gemini Analysis Failed:", error);
     return "SYSTEM ERROR: AI ANALYSIS MODULE UNREACHABLE. PROCEED WITH CAUTION.";

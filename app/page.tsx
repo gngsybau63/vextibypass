@@ -230,7 +230,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-[#020408] text-white selection:bg-none select-none flex flex-col relative font-sans overflow-x-hidden">
-      <div className="absolute inset-0 pointer-events-none fixed" style={{ background: 'radial-gradient(ellipse at center, rgba(0,102,255,0.05) 0%, transparent 70%)' }}></div>
+      <div className="absolute inset-0 pointer-events-none fixed bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0066ff]/5 via-transparent to-transparent"></div>
       
       <nav className="border-b border-[#1f1f1f] bg-[#020408]/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -253,6 +253,7 @@ export default function Page() {
       </nav>
 
       <main className="flex-1 max-w-5xl mx-auto w-full p-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+          
           <div className="lg:col-span-7 space-y-6">
             <div className="bg-[#0a0c10] border border-[#1f1f1f] rounded-2xl p-6 shadow-2xl relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0066ff] to-transparent opacity-50"></div>
@@ -376,7 +377,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 flex flex-col gap-4 h-[600px] lg:h-auto sticky top-24">
+          <div className="lg:col-span-5 flex flex-col gap-4 h-[600px] lg:h-auto lg:sticky lg:top-24">
              <div className="bg-[#0f0f0f] rounded-t-lg border border-[#1f1f1f] p-3 border-b-0 flex items-center justify-between">
              </div>
              <div className="flex-1 -mt-4">
