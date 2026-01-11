@@ -11,7 +11,7 @@ Vaultix is a React-based security dashboard application built with Vite and Type
 - **Icons**: Lucide React
 
 ## Directory Structure
-```
+\`\`\`
 /
 ├── App.tsx              # Main application component
 ├── index.tsx            # React entry point
@@ -25,7 +25,7 @@ Vaultix is a React-based security dashboard application built with Vite and Type
 ├── services/
 │   └── geminiService.ts # Gemini AI service
 └── types.ts             # TypeScript types
-```
+\`\`\`
 
 ## Development
 - **Dev Server**: `npm run dev` (runs on port 5000)
