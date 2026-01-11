@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useEffect, useRef } from 'react';
 import { LogEntry } from '../types';
-import { Terminal as TerminalIcon } from 'lucide-react';
+import { TerminalIcon } from 'lucide-react';
 
 interface TerminalProps {
   logs: LogEntry[];
